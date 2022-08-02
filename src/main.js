@@ -19,6 +19,13 @@ for(let personajes of data.results) {
     <p3>${personajes.type}</p3>
     <br>
     <p4>${personajes.gender}</p4>
+    <br>
+    <p5>${personajes.origin.name}</p5>
+    <br>
+    <p6>${personajes.location.name}</p6>
+    <br>
+    <p6>${personajes.episode}</p6>
+
     </article>`;
 }
 
