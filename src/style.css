@@ -1,0 +1,142 @@
+*{margin: 0;
+    padding: 0;
+    }
+main {
+display: grid;
+gap: 30px;
+grid-auto-rows: 230px;
+grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+background-image: url(./Fondo\ estrellas\ desde\ cero\ final.jpg);
+background-repeat: repeat;
+}
+
+header {
+    width: 100%;
+    height: 10%;
+    background-color: black;
+}
+.imageRickAndMorty {
+    width: 10%;
+    height: 25%;
+    margin-left: 350px;
+
+}
+.title {
+width: 25%;
+height: 40%;
+margin-left: 30px;
+}
+ img {
+    width: 180px;
+    height: 180px;
+    
+ }
+ article {
+    align-items: center;
+   margin: auto;
+ }
+ h2 {
+    color: white;
+ }
+
+.modalContainer {
+    display: flex;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    position:fixed;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+}
+
+.container {
+    background-color: black;
+    width: 600px;
+    height: 350px;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.Show {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+/************ MODAL ************/
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: 
+  rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  .modalDialog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 100ms ease-in;
+    -moz-transition: opacity 100ms ease-in;
+    transition: opacity 100ms ease-in;
+    pointer-events: none;
+  }
+  .modalDialog:target {
+    opacity:1;
+    pointer-events: auto;
+  }
+  .modalDialog > section {
+    max-width: 800px;
+    width: 90%;
+    position: relative;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 3px;
+    background: 
+  #fff;
+  }
+  .close {
+    font-family: Arial, Helvetica, sans-serif;
+    background: 
+  #f26d7d;
+    color: 
+  #fff;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 34px;
+    height: 34px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -moz-box-shadow: 1px 1px 3px 
+  #000;
+    -webkit-box-shadow: 1px 1px 3px 
+  #000;
+    box-shadow: 1px 1px 3px 
+  #000;
+    padding-top: 5px;
+  }
+  .close:hover {
+    background: 
+  #fa3f6f;
+  }

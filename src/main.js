@@ -2,31 +2,30 @@ import { example } from './data.js';
 // import data from './data/lol/lol.js';
 //import data from './data/pokemon/pokemon.js';
 import data from './data/rickandmorty/rickandmorty.js';
-
 //console.log(example, data);
-var characteresSerie = document.getElementById("personajes");
 
-for(let personajes of data.results) {
-    console.log(personajes);
+const characteresSerie = document.getElementById("characteres");
+
+for (let characteres of data.results) {
     characteresSerie.innerHTML += `<article> 
-    <h2>${personajes.name}</h2>
+    <img src=${characteres.image} alt="Imagen">
     <br>
-    <img src=${personajes.image} alt="muestra" >
-    <p>${personajes.status}</p>
-    <br>
-    <p2>${personajes.species}</p2>
-    <br>
-    <p3>${personajes.type}</p3>
-    <br>
-    <p4>${personajes.gender}</p4>
-    <br>
-    <p5>${personajes.origin.name}</p5>
-    <br>
-    <p6>${personajes.location.name}</p6>
-    <br>
-    <p6>${personajes.episode}</p6>
+    <h2>${characteres.name}</h2>
+    <a href="#${characteres.id}">Ver más</a>
+    </article>
 
-    </article>`;
+    <section id="${characteres.id}" class="modalDialog">
+    <section>
+      <a href="#close" title="Close" class="close">x</a>
+      <h3>${characteres.name}</h3>
+      <img src=${characteres.image} alt="Imagen">
+      <p>Estatus: ${characteres.status}</p>
+      <p>Especie: ${characteres.species}</p>
+      <p>Género: ${characteres.gender}</p>
+      <p>Origen: ${characteres.origin.name}</p>
+      <p>Locación: ${characteres.location.name}</p>
+      <p>Número de episodios en los que aparece: ${characteres.episode.length}</p>
+    </section>
+   </section>
+    `;
 }
-
-
