@@ -1,31 +1,37 @@
-import { example } from './data.js';
+import { filterData } from './data.js';
 // import data from './data/lol/lol.js';
 //import data from './data/pokemon/pokemon.js';
 import data from './data/rickandmorty/rickandmorty.js';
 //console.log(example, data);
 
-const characteresSerie = document.getElementById("characteres");
+const charactersSerie = document.getElementById("characters");
 
-for (let characteres of data.results) {
-    characteresSerie.innerHTML += `<article> 
-    <img src=${characteres.image} alt="Imagen">
+for (let characters of data.results) {
+  charactersSerie.innerHTML += `<article> 
+    <img src=${characters.image} alt="Imagen">
     <br>
-    <h2>${characteres.name}</h2>
-    <a href="#${characteres.id}">Ver más</a>
+    <h2>${characters.name}</h2>
+    <a href="#${characters.id}">Ver más</a>
     </article>
-
-    <section id="${characteres.id}" class="modalDialog">
+    <section id="${characters.id}" class="modalDialog">
     <section>
       <a href="#close" title="Close" class="close">x</a>
-      <h3>${characteres.name}</h3>
-      <img src=${characteres.image} alt="Imagen">
-      <p>Estatus: ${characteres.status}</p>
-      <p>Especie: ${characteres.species}</p>
-      <p>Género: ${characteres.gender}</p>
-      <p>Origen: ${characteres.origin.name}</p>
-      <p>Locación: ${characteres.location.name}</p>
-      <p>Número de episodios en los que aparece: ${characteres.episode.length}</p>
+      <h3>${characters.name}</h3>
+      <img src=${characters.image} alt="Imagen">
+      <p>Estatus: ${characters.status}</p>
+      <p>Especie: ${characters.species}</p>
+      <p>Género: ${characters.gender}</p>
+      <p>Origen: ${characters.origin.name}</p>
+      <p>Locación: ${characters.location.name}</p>
+      <p>Número de episodios en los que aparece: ${characters.episode.length}</p>
     </section>
    </section>
     `;
 }
+
+const buttonFilter = document.getElementById("filterButton");
+buttonFilter.addEventListener("change", () => filterData(data.results, buttonFilter.value)); 
+
+
+
+
