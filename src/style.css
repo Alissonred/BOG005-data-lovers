@@ -39,34 +39,6 @@ margin-left: 30px;
     color: white;
  }
 
-.modalContainer {
-    display: flex;
-    background-color: white;
-    align-items: center;
-    justify-content: center;
-    position:fixed;
-    pointer-events: none;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-}
-
-.container {
-    background-color: black;
-    width: 600px;
-    height: 350px;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-
-.Show {
-    pointer-events: auto;
-    opacity: 1;
-}
-
 /************ MODAL ************/
 /* The Modal (background) */
 .modal {
