@@ -35,7 +35,9 @@ function showData(data) {
 showData(data.results)
 
 const buttonFilter = document.getElementById("filterButton");
+//const buttonSort = document.getElementById("sortButton");
 buttonFilter.addEventListener("change", () => showData(filterData(data.results, buttonFilter.value)));
+//buttonSort.addEventListener("change", () => showData(sortData(data.results, buttonFilter.value)));
 
 
 
