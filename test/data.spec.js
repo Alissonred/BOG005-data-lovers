@@ -127,6 +127,18 @@ describe('filterData', () => {
   expect(() => filterData( )).toThrow(TypeError);
 });  */
   });
+
+  it('Returns filterData unknown', () => {                     // testea filtrar alive
+    let dataExpectUnknown = [
+    ];
+    expect(filterData(original_data.results, "unknown")).toEqual(dataExpectUnknown);
+     
+
+   /* it('filterData returns a TypeError', () => {                      // testea el error 
+    expect(() => filterData( )).toThrow(TypeError);
+  });  */
+  });
+
   });
 
 ///////////////////////////////////////////////SORT//////////////////////////////////////////////////////////////////////////////////
