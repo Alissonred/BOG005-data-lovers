@@ -8,7 +8,7 @@ export const filterData = (data, condition) => {
  
 export const sortData = (data, criterial) => {
   let dataOrdenada = [];
-  console.log(criterial);
+  //console.log(criterial);
   if (criterial === "A-Z"){
     dataOrdenada = data.sort((a, b)  => {
     if(a.name < b.name) //se ordena de a a-z
@@ -21,7 +21,7 @@ export const sortData = (data, criterial) => {
     }
 
   else if (criterial === "Z-A"){
-  alert("ordena z-a");
+  //alert("ordena z-a");
   dataOrdenada =data.sort((a ,b)  => {
     if(a.name > b.name) //se ordena de a a-z
     {return -1;}
@@ -31,7 +31,7 @@ export const sortData = (data, criterial) => {
     {return 0;}
     });
  }
-console.log(dataOrdenada);
+//console.log(dataOrdenada);
 return dataOrdenada;
 
  }

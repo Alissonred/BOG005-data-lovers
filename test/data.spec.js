@@ -58,7 +58,7 @@ let original_data = {
  
 };
 
-
+//////////////////////////////////////////////FILTER///////////////////////////////////////////////////////////////////////////////
 describe('filterData', () => {
   it('to evaluate if filterData is a function', () => {  //// testea que sea una funcion
     expect(typeof filterData).toBe('function');
@@ -103,7 +103,7 @@ describe('filterData', () => {
   });
 
 
-it('Returns filterData dead', () => {                     // testea filtrar dead
+  it('Returns filterData dead', () => {                     // testea filtrar dead
   let dataExpectDead = [
 
  {
@@ -126,8 +126,123 @@ it('Returns filterData dead', () => {                     // testea filtrar dead
 /*  it('filterData returns a TypeError', () => {                      // testea el error 
   expect(() => filterData( )).toThrow(TypeError);
 });  */
+  });
+  });
+
+///////////////////////////////////////////////SORT//////////////////////////////////////////////////////////////////////////////////
+describe('sortData', () => {
+  it('to evaluate if sortData is a function', () => {  //// testea que sea una funcion
+    expect(typeof sortData).toBe('function');
+  });
+
+  it('Returns filterData A-Z', () => {                     // testea filtrar alive
+    let dataExpectAZ = [
+      {
+        name: "Adjudicator Rick",
+        status: "Dead",
+        species: "Human",
+        gender: "Male",
+        origin: {
+          name: "unknown"
+        },
+        location: {
+          name: "Citadel of Ricks",
+        },
+        image: "images/8.jpeg"
+      },
+      {
+        name: "Morty Smith",
+        status: "Alive",
+        species: "Human",
+        gender: "Male",
+        origin: {
+          name: "Earth (C-137)"
+        },
+        location: {
+          name: "Earth (Replacement Dimension)",
+        },
+        image: "images/2.jpeg"
+      },
+      {
+        name: "Rick Sanchez",
+        status: "Alive",
+        species: "Human",
+        gender: "Male",
+        origin: {
+          name: "Earth (C-137)"
+        },
+        location: {
+          name: "Earth (Replacement Dimension)",
+        },
+        image: "images/1.jpeg"
+      },
+      
+    ];
+    expect(sortData(original_data.results, "A-Z")).toEqual(dataExpectAZ);
+     
+
+   /* it('filterData returns a TypeError', () => {                      // testea el error 
+    expect(() => filterData( )).toThrow(TypeError);
+  });  */
+  });
+
+
+  it('Returns filterData Z-A', () => {                     // testea filtrar dead
+  let dataExpectZA = [
+    {
+      name: "Rick Sanchez",
+      status: "Alive",
+      species: "Human",
+      gender: "Male",
+      origin: {
+        name: "Earth (C-137)"
+      },
+      location: {
+        name: "Earth (Replacement Dimension)",
+      },
+      image: "images/1.jpeg"
+    },
+    {
+      name: "Morty Smith",
+      status: "Alive",
+      species: "Human",
+      gender: "Male",
+      origin: {
+        name: "Earth (C-137)"
+      },
+      location: {
+        name: "Earth (Replacement Dimension)",
+      },
+      image: "images/2.jpeg"
+    },
+    {
+      name: "Adjudicator Rick",
+      status: "Dead",
+      species: "Human",
+      gender: "Male",
+      origin: {
+        name: "unknown"
+      },
+      location: {
+        name: "Citadel of Ricks",
+      },
+      image: "images/8.jpeg"
+    },
+  ];
+  expect(sortData(original_data.results, "Z-A")).toEqual(dataExpectZA);
+   
+
+/*  it('filterData returns a TypeError', () => {                      // testea el error 
+  expect(() => filterData( )).toThrow(TypeError);
+});  */
+  });
 });
-});
+
+
+
+
+
+
 
 
 
