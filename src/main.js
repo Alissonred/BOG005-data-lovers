@@ -1,4 +1,5 @@
 import { filterData } from './data.js';
+import { sortData } from './data.js';
 // import data from './data/lol/lol.js';
 //import data from './data/pokemon/pokemon.js';
 import data from './data/rickandmorty/rickandmorty.js';
@@ -32,12 +33,12 @@ function showData(data) {
   charactersSerie.innerHTML= showCharacters;
 }
 
-showData(data.results)
+showData(data.results);
 
 const buttonFilter = document.getElementById("filterButton");
-//const buttonSort = document.getElementById("sortButton");
+const buttonSort = document.getElementById("sortButton");
 buttonFilter.addEventListener("change", () => showData(filterData(data.results, buttonFilter.value)));
-//buttonSort.addEventListener("change", () => showData(sortData(data.results, buttonFilter.value)));
+buttonSort.addEventListener("change", () => showData(sortData(data.results, buttonSort.value)));
 
 
 

@@ -1,5 +1,5 @@
 import { filterData } from '../src/data.js';
-
+import { sortData } from '../src/data.js';
 
 // testear:
 // es una funcion
@@ -100,7 +100,7 @@ describe('filterData', () => {
    /* it('filterData returns a TypeError', () => {                      // testea el error 
     expect(() => filterData( )).toThrow(TypeError);
   });  */
-});
+  });
 
 
 it('Returns filterData dead', () => {                     // testea filtrar dead
@@ -128,6 +128,9 @@ it('Returns filterData dead', () => {                     // testea filtrar dead
 });  */
 });
 });
+
+
+
 
 /* 
 describe('example', () => {
