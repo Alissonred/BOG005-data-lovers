@@ -5,7 +5,7 @@ import { sortData } from './data.js';
 import data from './data/rickandmorty/rickandmorty.js';
 
 const charactersSerie = document.getElementById("characters");
-function showData(data) {
+ function showData(data) {
   let showCharacters ="";
   charactersSerie.innerHTML = "";
   for (let characters of data) {

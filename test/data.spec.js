@@ -1,6 +1,7 @@
 import { filterData } from '../src/data.js';
 import { sortData } from '../src/data.js';
 
+
 // testear:
 // es una funcion
 //reciba array           // error en caso de que no
@@ -95,13 +96,11 @@ describe('filterData', () => {
       },
     ];
     expect(filterData(original_data.results, "Alive")).toEqual(dataExpect);
-     
-
-   /* it('filterData returns a TypeError', () => {                      // testea el error 
-    expect(() => filterData( )).toThrow(TypeError);
-  });  */
   });
 
+  it('filterData returns a TypeError', () => {                      // testea el error 
+    expect(() =>filterData()).toThrow(TypeError);
+   }); 
 
   it('Returns filterData dead', () => {                     // testea filtrar dead
   let dataExpectDead = [
@@ -147,7 +146,7 @@ describe('sortData', () => {
     expect(typeof sortData).toBe('function');
   });
 
-  it('Returns filterData A-Z', () => {                     // testea filtrar alive
+  it('Returns sortData A-Z', () => {                     // testea filtrar alive
     let dataExpectAZ = [
       {
         name: "Adjudicator Rick",
@@ -198,8 +197,7 @@ describe('sortData', () => {
   });  */
   });
 
-
-  it('Returns filterData Z-A', () => {                     // testea filtrar dead
+  it('Returns sortData Z-A', () => {                     // testea filtrar dead
   let dataExpectZA = [
     {
       name: "Rick Sanchez",
@@ -248,8 +246,11 @@ describe('sortData', () => {
   expect(() => filterData( )).toThrow(TypeError);
 });  */
   });
-});
 
+  it('sortData returns a TypeError', () => {                      // testea el error 
+    expect(() =>sortData()).toThrow(TypeError);
+   }); 
+});
 
 
 

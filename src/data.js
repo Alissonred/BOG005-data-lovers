@@ -1,5 +1,5 @@
 export const filterData = (data, condition) => {
-  /* if (data === undefined && condition === undefined)
+  if (!data  || !condition )
    { throw new TypeError('no hay datos');}  // lanza una nueva instancia del objeto error */
   const dataFiltrada= data.filter( character  => {
    return character.status === condition})
@@ -9,6 +9,10 @@ export const filterData = (data, condition) => {
 export const sortData = (data, criterial) => {
   let dataOrdenada = [];
   //console.log(criterial);
+  if (!data  || !criterial ) 
+  { throw new TypeError('no hay datos')} // lanza una nueva instancia del objeto error */}
+  
+  else {
   if (criterial === "A-Z"){
     dataOrdenada = data.sort((a, b)  => {
     if(a.name < b.name) //se ordena de a a-z
@@ -31,9 +35,9 @@ export const sortData = (data, criterial) => {
     {return 0;}
     });
  }
-//console.log(dataOrdenada);
-return dataOrdenada;
-
+ //console.log(dataOrdenada);
+  return dataOrdenada;
+ }
  }
  
 //// funcion ordenar auxiliar
