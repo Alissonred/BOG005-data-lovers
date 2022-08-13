@@ -100,6 +100,8 @@ describe('filterData', () => {
 
   it('filterData returns a TypeError', () => {                      // testea el error 
     expect(() =>filterData()).toThrow(TypeError);
+    expect(() =>filterData(null, null)).toThrow(TypeError);
+    expect(() =>filterData([], null)).toThrow(TypeError);
    }); 
 
   it('Returns filterData dead', () => {                     // testea filtrar dead
@@ -249,6 +251,8 @@ describe('sortData', () => {
 
   it('sortData returns a TypeError', () => {                      // testea el error 
     expect(() =>sortData()).toThrow(TypeError);
+    expect(() =>sortData(null,null)).toThrow(TypeError);
+    expect(() =>sortData([],null)).toThrow(TypeError);
    }); 
 });
 
