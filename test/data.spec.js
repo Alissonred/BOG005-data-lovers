@@ -264,18 +264,17 @@ describe('sortData', () => {
 
 
 
-/* 
 describe('example', () => {
   it('is a function', () => {
-    expect(typeof example).toBe('function');
+    expect(typeof filterData).toBe('function');
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
+   it('should return the selected filter', () => {
+    expect(filterData()).toBe('Array');
   });
 });
 
-
+/*
 describe('anotherExample', () => {
   it('is a function', () => {
     expect(typeof anotherExample).toBe('function');
@@ -285,4 +284,3 @@ describe('anotherExample', () => {
     expect(anotherExample()).toBe('OMG');
   });
 });
- */
