@@ -10,9 +10,7 @@ const charactersSerie = document.getElementById("characters");
   for (let characters of data) {
     showCharacters += `<article class="pictures"> 
       <img src=${characters.image} alt="Imagen">
-      <br>
-      <h2>${characters.name}</h2>
-      <br>
+      <h2 class="labels_m">${characters.name}</h2>
       <a href="#${characters.id}" class="ButtonModal">Read more</a>
       </article>
       <section id="${characters.id}"class="modalDialog">
@@ -20,12 +18,12 @@ const charactersSerie = document.getElementById("characters");
         <a href="#close" title="Close" class="close">X</a>
         <h3>${characters.name}</h3>
         <img src=${characters.image} alt="Imagen">
-        <p>Estatus: ${characters.status}</p>
-        <p>Especie: ${characters.species}</p>
-        <p>Género: ${characters.gender}</p>
-        <p>Origen: ${characters.origin.name}</p>
-        <p>Locación: ${characters.location.name}</p>
-        <p>Número de episodios: ${characters.episode.length}</p>
+        <p class="labels_m">Estatus: ${characters.status}</p>
+        <p class="labels_m">Especie: ${characters.species}</p>
+        <p class="labels_m">Género: ${characters.gender}</p>
+        <p class="labels_m">Origen: ${characters.origin.name}</p>
+        <p class="labels_m">Locación: ${characters.location.name}</p>
+        <p class="labels_m">Número de episodios: ${characters.episode.length}</p>
       </section>
      </section>
       `;
