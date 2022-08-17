@@ -1,19 +1,22 @@
-*{margin: 0;
-    padding: 0;
-    }
+
+
 main {
 display: grid;
-gap: 30px;
-grid-auto-rows: 230px;
-grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-background-image: url(./Fondo\ estrellas\ desde\ cero\ final.jpg);
+gap: 25px;
+grid-auto-rows: 200px;
+grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+background-image: url(./Fondo\ estrellas\ desde\ cero\ final\ \(3\).jpg);
 background-repeat: repeat;
+justify-content: center;
+text-align: center;
+margin: 10px;
 }
 
 header {
     width: 100%;
-    height: 10%;
+    height: 12%;
     background-color: black;
+    box-shadow: 1px 1px 30px 0px white;
 }
 .imageRickAndMorty {
     width: 10%;
@@ -27,33 +30,36 @@ height: 40%;
 margin-left: 30px;
 }
  img {
-    width: 180px;
-    height: 180px;
+    width: 130px;
+    height: 130px;
     
  }
- article {
-    align-items: center;
-   margin: auto;
+.pictures {
+  border: 2px;
+  border-color: aliceblue;
+  margin:0;
+
+
  }
  h2 {
     color: white;
  }
 
+ .ButtonModal {
+  background-color: white;
+  padding: 5px 8px;
+  border-radius: 5px;
+  color: black;
+  text-decoration: none;
+ }
+ .ButtonModal:hover {
+  background: 
+  rgba(159, 255, 9, 1);
+}
+
 /************ MODAL ************/
 /* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: 
-  rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
+
   .modalDialog {
     position: fixed;
     top: 0;
@@ -74,27 +80,33 @@ margin-left: 30px;
   }
   .modalDialog > section {
     max-width: 800px;
-    width: 90%;
+    width: 43%;
+    height: 50%;
     position: relative;
     margin: 10% auto;
-    padding: 20px;
-    border-radius: 3px;
-    background: 
-  #fff;
+    padding: 5px;
+    border-radius: 10px;
+    background: black;
+    text-align: center;
+    color: white;
+    box-shadow: 1px 1px 30px 0px rgba(159, 255, 9, 1);
+  }
+
+  h3 {
+    font-size: 30px;
+    padding: 8px;
   }
   .close {
     font-family: Arial, Helvetica, sans-serif;
-    background: 
-  #f26d7d;
-    color: 
-  #fff;
+    background: white;
+    color: rgba(7, 156, 147, 1);
     line-height: 25px;
     position: absolute;
-    right: -12px;
+    right: -8px;
     text-align: center;
-    top: -10px;
-    width: 34px;
-    height: 34px;
+    top: -6px;
+    width: 28px;
+    height: 25px;
     text-decoration: none;
     font-weight: bold;
     -webkit-border-radius: 50%;
@@ -106,9 +118,47 @@ margin-left: 30px;
   #000;
     box-shadow: 1px 1px 3px 
   #000;
-    padding-top: 5px;
+    padding-top: 2px;
   }
   .close:hover {
     background: 
-  #fa3f6f;
+    rgba(159, 255, 9, 1);
+    
+  }
+nav {
+  background-color: black;
+  
+
+}
+  #filterButton {
+    margin-left: 80%;
+    padding: 7px;
+    background-color: rgba(139, 239, 40, 1);
+    border-color: white;
+    border-radius: 7px;
+    text-align: center;
+
+  }
+  #sortButton {
+    padding: 7px;
+    background-color: rgba(139, 239, 40, 1);
+    border-color: white;
+    border-radius: 7px;
+    text-align: center;
+
+  }
+  #buttonAll {
+    padding: 7px;
+    background-color: rgba(139, 239, 40, 1);
+    border-color: white;
+    border-radius: 7px;
+    text-align: center;
+
+  }
+
+  footer {
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    text-align: center;
   }
