@@ -42,5 +42,35 @@ buttonSort.addEventListener("change", () => showData(sortData(data.results, butt
 const buttonAll = document.getElementById("buttonAll");
 buttonAll.addEventListener("click", () => showData(data.results));
 
+/////////////////////////// calcular///////
+let score=0; // puntaje
+const buttonGame = document.getElementById("buttonGame");// creo boton
+buttonGame.addEventListener("click",()=> showGame(data.results));
 
+function showGame (data) {
+ 
+  let objetivo1 = data[Math.floor(Math.random()*(1+493)+ 0)] // selecc objeto aleatorio revisar bien los parametros de la funcion aleatoria
+  let objetivo2 = data[Math.floor(Math.random()*(1+493)+ 0)] // selecc objeto aleatorio revisar bien los parametros de la funcion aleatoria
+  let objetivo3 = data[Math.floor(Math.random()*(1+493)+ 0)] // selecc objeto aleatorio revisar bien los parametros de la funcion aleatoria
+  let objetivos = [objetivo1, objetivo2, objetivo3];
+  console.log(objetivo1);
+  charactersSerie.innerHTML = ""; //limpia contenedor
+  charactersSerie.innerHTML = `
+  <a href="#${objetivo1.id}" class="ButtonModal">Next</a>
 
+  <article id="${objetivo1.id}">
+  <p class ="texto">¿A que personaje hace referencia la imagen</p>
+  <img src=${objetivo1.image} alt="Imagen">
+  <br>
+  <select name="Selecciona una opción" id="opc_img">
+  <option disabled selected ="">Selecciona una opción</option>
+  <option id="rta11" value="${objetivo1.name}">${objetivo1.name}</option>
+  <option id="rta12" value="${objetivo2.name}">${objetivo2.name}</option>
+  <option id="rta13" value="${objetivo3.name}">${objetivo3.name}</option>
+  </select>
+  
+  </article>
+ 
+  `;
+}
+ 
