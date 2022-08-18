@@ -1,31 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
 html,body {
   width: 100%;
   overflow-x: hidden;
   margin: 0%;
   }
-
+  header {
+    width: 100%;
+    height: 25%;
+    background-color: black;
+   box-shadow: 1px 1px 3px 0px white;
+  
+   }
 main {
 display: grid;
-gap: 40px;
+gap: 115px;
 grid-auto-rows: 220px;
-grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-background-image: url(./Fondo\ estrellas\ desde\ cero\ final\ \(3\).jpg);
+grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+background-image: url(./Fondo\ estrellas\ desde\ cero\ finalU.jpg);
 background-repeat: repeat;
 justify-content: center;
 text-align: center;
 margin: 0px;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 30px;
 overflow-x: hidden;
+padding-bottom: 30px;
 }
+ h1 {
+  margin:0;
+  padding: 0;
+ }
 
-header {
-    width: 100%;
-    height: 25%;
-    background-color: black;
-    /* box-shadow: 1px 1px 30px 0px white; */
-    border: 4px solid rgb(170, 35, 35);
-    position: fixed;
-    opacity: 0.9;
-}
+  
 .imageRickAndMorty {
     width: 10%;
     height: 25%;
@@ -35,46 +44,55 @@ header {
 .title {
 width: 25%;
 height: 40%;
-/* margin-left: 30px; */
 }
-img {
-    width: 150px;
-    height: 150px;      
- }
+ #imagemodal {
+  width: 150px;
+    height: 150px;
+    padding: 0;
+    margin: 5px;
+    box-shadow: 1px 1px 3px 1px white;
+    border-radius: 3px;
+}
 article img {
-  box-shadow: 1px 1px 10px 1px rgba(159, 255, 9, 1);
-  border-radius: 7px;
+  width: 160px;
+    height: 160px;
+    box-shadow: 1px 1px 3px 1px white;
+  
 }
 main .pictures{
-  border: 4px solid rgb(170, 35, 35);
+  border: 4px solid rgba(159, 255, 9, 1);
   padding: 0%;
+  box-shadow: 1px 1px 8px 1px rgba(159, 255, 9, 1);
+  background-color: #000;
+  width: 160px;
+    height: 245px;
 }
-.pictures {
-  border: 2px;
-  border-color: aliceblue;
-  margin:0;
- /*  overflow-x: hidden; */
- }
 
  h2 {
-    color:chartreuse;
-    font-size: 100%;
-    padding-bottom: 1%;
-    margin: 0%;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    font-size: 25px;
+    padding: 3px;
+    margin: 0;
+    margin-bottom: 3px;
+    font-family: 'Patrick Hand', cursive;
+    
  }
 
  .ButtonModal {
-  background-color: rgb(110, 42, 165); 
-  padding: 5px 8px;
+  background-color:rgb(110, 42, 165); 
   border-radius: 5px;
-  color: black;
+  color: white; 
+  padding: 3px 5px;
   text-decoration: none;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-top: 12px;
+  font-family: 'Secular One', sans-serif;
+  font-size: 13px;
+  
  }
  .ButtonModal:hover {
   background: 
   rgba(159, 255, 9, 1);
+  color:rgb(0, 102, 88)
 }
 
 /************ MODAL ************/
@@ -100,8 +118,8 @@ main .pictures{
   }
   .modalDialog > section {
     max-width: 800px;
-    width: 43%;
-    height: 50%;
+    width: 38%;
+    height: 53%;
     position: relative;
     margin: 10% auto;
     padding: 5px;
@@ -109,12 +127,19 @@ main .pictures{
     background: black;
     text-align: center;
     color: white;
-    box-shadow: 1px 1px 30px 0px rgba(159, 255, 9, 1);
+    box-shadow: 1px 1px 15px 0px rgba(159, 255, 9, 1);
   }
 
+  p {
+    margin:0;
+    padding: 0;
+    font-family: 'Secular One', sans-serif;
+  }
   h3 {
     font-size: 30px;
-    padding: 8px;
+    padding: 3px;
+    margin:0;
+    font-family: 'Patrick Hand', cursive;
   }
   .close {
     font-family: Arial, Helvetica, sans-serif;
@@ -143,48 +168,56 @@ main .pictures{
   .close:hover {
     background: 
     rgba(159, 255, 9, 1);
+    color:rgb(255, 0, 242)
     
   }
 nav {
   width:100%;
-  height: 5%;
-  padding-bottom: 1%;
-  padding-top: 1%;
-  background-color: black;
+  height: 100px;
+ padding: 0px;
+ padding-left: 50px;
+ padding-right: 50px;
+  background-color: rgb(0, 0, 0);
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); 
-  grid-auto-rows: 33,3%;
-  gap:1rem; 
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
+  grid-auto-rows: 30px;
+  gap: 10px; 
   justify-content: center;
-  text-align: center;
-  margin: 0px;   
-  
-  opacity: 0.9;
-  /* justify-content: center;
-   text-align: center;  */
-  /* border: 4px solid red; */
-  /* position: fixed; */
+  text-align: center;   
+  background-image: url(./Fondo\ estrellas\ desde\ cero\ finalU.jpg);
 }
-.buttons{
-    margin-left: 25%;  
-     width: 30%;
-    /*height: 100%; */
-    /* padding: 7px; */
-    background-color: rgba(139, 239, 40, 1);
+.buttons{ 
+     width: 100%;
+    height: 100%;
+    background-color: black;
     border-color: white;
     border-radius: 7px; 
     text-align: center;
     color:rgb(14, 0, 139);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    font-family: 'Secular One', sans-serif;
+    color: white;
+    padding: 3px;
 
 }
-  
-
+.buttons:hover {
+  background: 
+  rgba(159, 255, 9, 1);
+  color:rgb(255, 0, 242)
+ }
   footer {
     width: 100%;
     height: 100px;
     background-color: rgb(0, 0, 0);
     text-align: center;
-    position: fixed;
+    justify-content: center;
+    align-items: center;
     color: aliceblue;
+    box-shadow: 1px 1px 3px 0px white;
+   
+  }
+  footer p {
+    padding: 30px;
+    font-size: 30px;
+    font-family: 'Patrick Hand', cursive;
   }

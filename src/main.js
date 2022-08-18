@@ -17,7 +17,7 @@ const charactersSerie = document.getElementById("characters");
       <section>
         <a href="#close" title="Close" class="close">X</a>
         <h3>${characters.name}</h3>
-        <img src=${characters.image} alt="Imagen">
+        <img src=${characters.image} alt="Image" id="imagemodal">
         <p class="labels_m">Estatus: ${characters.status}</p>
         <p class="labels_m">Especie: ${characters.species}</p>
         <p class="labels_m">Género: ${characters.gender}</p>
