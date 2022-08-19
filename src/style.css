@@ -256,3 +256,10 @@ nav {
     width: 1000px;
     height: 500px;
   }
+  #results{
+    font-family: 'Patrick Hand', cursive;
+    color: white;
+    font-size: 10%;
+    font-size: 40px;
+    padding: 10px;
+  }
