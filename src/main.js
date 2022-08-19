@@ -4,8 +4,8 @@ import { filterData, sortData } from './data.js';
 import data from './data/rickandmorty/rickandmorty.js';
 
 const charactersSerie = document.getElementById("characters");
- function showData(data) {
-  let showCharacters ="";
+function showData(data) {
+  let showCharacters = "";
   charactersSerie.innerHTML = "";
   for (let characters of data) {
     showCharacters += `<article class="pictures"> 
@@ -13,7 +13,7 @@ const charactersSerie = document.getElementById("characters");
       <h2 class="labels_m">${characters.name}</h2>
       <a href="#${characters.id}" class="ButtonModal">Read more</a>
       </article>
-      <section id="${characters.id}"class="modalDialog">
+      <section id="${characters.id}" class="modalDialog">
       <section>
         <a href="#close" title="Close" class="close">X</a>
         <h3>${characters.name}</h3>
@@ -28,7 +28,7 @@ const charactersSerie = document.getElementById("characters");
      </section>
       `;
   }
-  charactersSerie.innerHTML= showCharacters;
+  charactersSerie.innerHTML = showCharacters;
 }
 
 showData(data.results)
@@ -43,34 +43,40 @@ const buttonAll = document.getElementById("buttonAll");
 buttonAll.addEventListener("click", () => showData(data.results));
 
 /////////////////////////// calcular///////
-let score=0; // puntaje
-const buttonGame = document.getElementById("buttonGame");// creo boton
-buttonGame.addEventListener("click",()=> showGame(data.results));
+let score = 0; 
+let countQuestions = 0;
+const buttonGame = document.getElementById("buttonGame");
+buttonGame.addEventListener("click", () => showGame(data.results));
 
-function showGame (data) {
- 
-  let objetivo1 = data[Math.floor(Math.random()*(1+493)+ 0)] // selecc objeto aleatorio revisar bien los parametros de la funcion aleatoria
-  let objetivo2 = data[Math.floor(Math.random()*(1+493)+ 0)] // selecc objeto aleatorio revisar bien los parametros de la funcion aleatoria
-  let objetivo3 = data[Math.floor(Math.random()*(1+493)+ 0)] // selecc objeto aleatorio revisar bien los parametros de la funcion aleatoria
-  let objetivos = [objetivo1, objetivo2, objetivo3];
-  console.log(objetivo1);
-  charactersSerie.innerHTML = ""; //limpia contenedor
+function showGame(characters) {
+  countQuestions++;
+  let answer1 = characters[Math.floor(Math.random() * (1 + 493) + 0)]
+  let answer2 = characters[Math.floor(Math.random() * (1 + 493) + 0)]
+  let answer3 = characters[Math.floor(Math.random() * (1 + 493) + 0)]
+let answerRandom = characters[Math.floor(Math.random() * (1 + 493) + 0)]
+  charactersSerie.innerHTML = "";
   charactersSerie.innerHTML = `
-  <a href="#${objetivo1.id}" class="ButtonModal">Next</a>
-
-  <article id="${objetivo1.id}">
-  <p class ="texto">¿A que personaje hace referencia la imagen</p>
-  <img src=${objetivo1.image} alt="Imagen">
+  <article id=Gamecontainer> <h4>Which character does the image refer to?</h4>
+  <img src=${answer1.image} alt="Imagen">
   <br>
-  <select name="Selecciona una opción" id="opc_img">
-  <option disabled selected ="">Selecciona una opción</option>
-  <option id="rta11" value="${objetivo1.name}">${objetivo1.name}</option>
-  <option id="rta12" value="${objetivo2.name}">${objetivo2.name}</option>
-  <option id="rta13" value="${objetivo3.name}">${objetivo3.name}</option>
-  </select>
-  
+  <select name="select an answer" id="opc_img">
+  <option disabled selected ="Select an answer"></option>
+  <option id="answer1" value="${answer1.name}">${answer1.name}</option>
+  <option id="answer2" value="${answer2.name}">${answer2.name}</option>
+  <option id="answer2" value="${answer3.name}">${answer3.name}</option> </select>
+  <button id="ButtonNext">Next</button>
   </article>
- 
   `;
+
+  charactersSerie.querySelector("#ButtonNext").addEventListener("click", () => showGame(data.results))
+
+  charactersSerie.querySelector("#opc_img").addEventListener("change", (event) => {
+    if (event.target.value === answer1.name) { score++; }
+  })
+
+  if (countQuestions === 6) {
+    alert("terminaste" + "tu puntaje es" + score)
+    return showGame
+  }
+  
 }
- 
