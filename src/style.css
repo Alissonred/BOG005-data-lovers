@@ -55,7 +55,7 @@ height: 40%;
 article img {
   width: 160px;
     height: 160px;
-    box-shadow: 1px 1px 3px 1px white;
+    box-shadow: 1px 1px 4px 1px white;
   
 }
 main .pictures{
@@ -221,4 +221,38 @@ nav {
    margin-top: 10px; 
     font-size: 30px;
     font-family: 'Patrick Hand', cursive;
+  }
+
+  #ButtonNext {
+    background-color: black;
+    border-color: white;
+    border-radius: 7px; 
+    text-align: center;
+    color:rgb(14, 0, 139);
+    font-size: 15px;
+    font-family: 'Secular One', sans-serif;
+    color: white;
+    padding: 10px;
+  }
+
+  h4 {
+    font-size: 40px;
+    padding: 10px;
+    margin: 20px;
+    font-family: 'Patrick Hand', cursive;
+    color: white;
+  }
+  #opc_img {
+    background-color: black;
+    border-color: white;
+    text-align: center;
+    color:rgb(14, 0, 139);
+    font-family: 'Secular One', sans-serif;
+    color: white;
+    padding: 3px;
+  }
+
+  #Gamecontainer {
+    width: 1000px;
+    height: 500px;
   }
