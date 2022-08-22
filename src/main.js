@@ -1,4 +1,4 @@
-import { filterData, sortData } from './data.js';
+import { filterData, sortData, computeStatus } from './data.js';
 // import data from './data/lol/lol.js';
 //import data from './data/pokemon/pokemon.js';
 import data from './data/rickandmorty/rickandmorty.js';
@@ -48,8 +48,6 @@ let countQuestions = 0;
 const buttonGame = document.getElementById("buttonGame");
 buttonGame.addEventListener("click", () => showGame(data.results));
 
-
-
 function showGame(characters) {
   countQuestions++;
   let answer1 = characters[Math.floor(Math.random() * (1 + 493) + 0)]
@@ -60,7 +58,7 @@ function showGame(characters) {
 
   charactersSerie.innerHTML = "";
   charactersSerie.innerHTML = `
-  <article id=Gamecontainer> <h4>Which caracter?</h4>
+  <article id=Gamecontainer> <h4>Which character does the image refer to?</h4>
   <br>
   <img src=${answer1.image} alt="Imagen">
   <select name="select an answer" id="opc_img">
@@ -69,18 +67,31 @@ function showGame(characters) {
   <option id="answer2" value="${opciones[1].name}">${opciones[1].name}</option>
   <option id="answer2" value="${opciones[2].name}">${opciones[2].name}</option> </select>
   <button id="ButtonNext">Next</button>
+  <h5>Clue:</h5>
+  <button id="prueba">This character has percentage in the series.<button>
   </article>
   `;
+  console.log(answer1)
+  charactersSerie.querySelector("#prueba").addEventListener("click", () => computeStatus(answer1))
 
   charactersSerie.querySelector("#ButtonNext").addEventListener("click", () => showGame(data.results))
 
   charactersSerie.querySelector("#opc_img").addEventListener("change", (event) => {
     if (event.target.value === answer1.name) { score++; }
   })
-
-  if (countQuestions === 6) {
-    alert("terminaste" + "tu puntaje es" + score)
   
-  }
+
+  let category = "";
+  if (countQuestions === 11) {
+    charactersSerie.innerHTML = "";
+    if (score <= 3) {category += "Not a fan!"}
+    else if (score >= 4 && score <= 6) {category +="You are almost a fan!"}
+    else if (score >= 7 && score <= 10) {category +="You are a big fan!"}
+    charactersSerie.innerHTML =  `
+    <article id= "results"> you  finished, your score is: ${score}, your category is ${category}
+    </article>
+    `;
+  } 
+
 
 }

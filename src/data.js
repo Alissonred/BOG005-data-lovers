@@ -14,11 +14,8 @@ if (sortOrder === "A-Z") {
   const sortedDataDownward = data.sort((a,b) => {
 if (a.name < b.name) {
   return -1;
-}
- else if (a.name > b.name ) {
-  return 1;
 } else
-return 0;
+return 1;
   })
   return sortedDataDownward;
 } 
@@ -28,14 +25,21 @@ else if (sortOrder === "Z-A") {
     
     if (a.name > b.name) {
       return -1;
-    }
-     else if (a.name < b.name ) {
-      return 1;
     } else
-    return 0;
+    return 1;
       })
       return sortedDataUpward;
     } 
+}
+
+//funcion calcular 
+
+export const computeStatus = (character) => {
+  const compute = (character.episode.length / 31) * 100
+  console.log (character.episode.length)
+  console.log(compute)
+
+  return compute
 }
 
 

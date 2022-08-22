@@ -123,10 +123,6 @@ describe('filterData', () => {
   ];
   expect(filterData(original_data.results, "Dead")).toEqual(dataExpectDead);
    
-
-/*  it('filterData returns a TypeError', () => {                      // testea el error 
-  expect(() => filterData( )).toThrow(TypeError);
-});  */
   });
 
   it('Returns filterData unknown', () => {                     // testea filtrar alive
@@ -134,10 +130,7 @@ describe('filterData', () => {
     ];
     expect(filterData(original_data.results, "unknown")).toEqual(dataExpectUnknown);
      
-
-   /* it('filterData returns a TypeError', () => {                      // testea el error 
-    expect(() => filterData( )).toThrow(TypeError);
-  });  */
+    
   });
 
   });

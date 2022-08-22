@@ -239,11 +239,12 @@ footer {
   align-items: center;
   color: aliceblue;
   box-shadow: 1px 1px 3px 0px white;
+  margin-top: 40px;
 
 }
 
 footer p {
-  margin-top: 10px;
+  padding-top: 10px;
   font-size: 30px;
   font-family: 'Patrick Hand', cursive;
 }
@@ -276,4 +277,8 @@ h4 {
   font-family: 'Secular One', sans-serif;
   color: white;
   padding: 3px;
+}
+
+#results {
+color: white;
 }
