@@ -43,27 +43,31 @@ const buttonAll = document.getElementById("buttonAll");
 buttonAll.addEventListener("click", () => showData(data.results));
 
 /////////////////////////// calcular///////
-let score = 0; 
+let score = 0;
 let countQuestions = 0;
 const buttonGame = document.getElementById("buttonGame");
 buttonGame.addEventListener("click", () => showGame(data.results));
+
+
 
 function showGame(characters) {
   countQuestions++;
   let answer1 = characters[Math.floor(Math.random() * (1 + 493) + 0)]
   let answer2 = characters[Math.floor(Math.random() * (1 + 493) + 0)]
   let answer3 = characters[Math.floor(Math.random() * (1 + 493) + 0)]
-let answerRandom = characters[Math.floor(Math.random() * (1 + 493) + 0)]
+  let opciones = [answer1, answer2, answer3];
+  opciones.sort(() => Math.random() - 0.5)
+
   charactersSerie.innerHTML = "";
   charactersSerie.innerHTML = `
-  <article id=Gamecontainer> <h4>Which character does the image refer to?</h4>
-  <img src=${answer1.image} alt="Imagen">
+  <article id=Gamecontainer> <h4>Which caracter?</h4>
   <br>
+  <img src=${answer1.image} alt="Imagen">
   <select name="select an answer" id="opc_img">
   <option disabled selected ="Select an answer"></option>
-  <option id="answer1" value="${answer1.name}">${answer1.name}</option>
-  <option id="answer2" value="${answer2.name}">${answer2.name}</option>
-  <option id="answer2" value="${answer3.name}">${answer3.name}</option> </select>
+  <option id="answer1" value="${opciones[0].name}">${opciones[0].name}</option>
+  <option id="answer2" value="${opciones[1].name}">${opciones[1].name}</option>
+  <option id="answer2" value="${opciones[2].name}">${opciones[2].name}</option> </select>
   <button id="ButtonNext">Next</button>
   </article>
   `;
@@ -76,7 +80,7 @@ let answerRandom = characters[Math.floor(Math.random() * (1 + 493) + 0)]
 
   if (countQuestions === 6) {
     alert("terminaste" + "tu puntaje es" + score)
-    return showGame
-  }
   
+  }
+
 }

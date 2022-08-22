@@ -7,6 +7,9 @@ export const filterData = (data, condition) => {
 };
 
 export const sortData = (data, sortOrder) => {
+  if (!data  || !sortOrder )
+   { throw new TypeError('No hay datos.');}
+   
 if (sortOrder === "A-Z") { 
   const sortedDataDownward = data.sort((a,b) => {
 if (a.name < b.name) {

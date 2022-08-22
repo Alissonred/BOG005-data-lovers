@@ -244,9 +244,7 @@ describe('sortData', () => {
   expect(sortData(original_data.results, "Z-A")).toEqual(dataExpectZA);
    
 
-/*  it('filterData returns a TypeError', () => {                      // testea el error 
-  expect(() => filterData( )).toThrow(TypeError);
-});  */
+
   });
 
   it('sortData returns a TypeError', () => {                      // testea el error 
@@ -264,13 +262,4 @@ describe('sortData', () => {
 
 
 
-describe('example', () => {
-  it('is a function', () => {
-    expect(typeof filterData).toBe('function');
-  });
-
-   it('should return the selected filter', () => {
-    expect(filterData()).toBe('Array');
-  });
-});
 
