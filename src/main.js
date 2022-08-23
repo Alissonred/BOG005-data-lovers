@@ -4,6 +4,7 @@ import { filterData, sortData, computeStatus } from './data.js';
 import data from './data/rickandmorty/rickandmorty.js';
 
 const charactersSerie = document.getElementById("characters");
+const gameSerie = document.getElementById("game");
 
 function showData(data) {
   let showCharacters = "";
@@ -29,6 +30,7 @@ function showData(data) {
      </section>
       `;
   }
+  
   charactersSerie.innerHTML = showCharacters;
 }
 
@@ -43,8 +45,11 @@ buttonSort.addEventListener("change", () => showData(sortData(data.results, butt
 const buttonAll = document.getElementById("buttonAll");
 buttonAll.addEventListener("click", () => showData(data.results));
 
+const gamecontainer = document.getElementById ("GameContainer")
+
 let score = 0;
 let countQuestions = 0;
+
 const buttonGame = document.getElementById("buttonGame");
 buttonGame.addEventListener("click", () => showGame(data.results));
 
@@ -56,8 +61,11 @@ function showGame(characters) {
   let opciones = [answer1, answer2, answer3];
   opciones.sort(() => Math.random() - 0.5)
 
+
+
   charactersSerie.innerHTML = "";
-  charactersSerie.innerHTML = `
+  gameSerie.innerHTML = "";
+  gameSerie.innerHTML = `
   <article id=Gamecontainer> <h4>Which character does the image refer to?</h4>
   <br>
   <img src=${answer1.image} alt="Imagen">
@@ -67,27 +75,27 @@ function showGame(characters) {
   <option id="answer2" value="${opciones[1].name}">${opciones[1].name}</option>
   <option id="answer2" value="${opciones[2].name}">${opciones[2].name}</option> </select>
   <button id="ButtonNext">Next</button>
-  <section>
+  <section id="clue">
   <h5>Clue:</h5>
   <p>This character has a ${computeStatus(answer1)}% of appearance in the series.<p>
   </section>
   </article>
   `;
 
-  charactersSerie.querySelector("#ButtonNext").addEventListener("click", () => showGame(data.results))
+  gameSerie.querySelector("#ButtonNext").addEventListener("click", () => showGame(data.results))
 
-  charactersSerie.querySelector("#opc_img").addEventListener("change", (event) => {
+  gameSerie.querySelector("#opc_img").addEventListener("change", (event) => {
     if (event.target.value === answer1.name) { score++; }
   })
   
 
   let category = "";
   if (countQuestions === 11) {
-    charactersSerie.innerHTML = "";
+    gameSerie.innerHTML = "";
     if (score <= 3) {category += "Not a fan!"}
     else if (score >= 4 && score <= 6) {category +="You are almost a fan!"}
     else if (score >= 7 && score <= 10) {category +="You are a big fan!"}
-    charactersSerie.innerHTML =  `
+    gameSerie.innerHTML =  `
     <article id= "results"> you  finished, your score is: ${score}, your category is ${category}
     </article>
     `;
