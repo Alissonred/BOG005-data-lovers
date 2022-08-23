@@ -68,29 +68,33 @@ article img {
   width: 160px;
   height: 160px;
   box-shadow: 1px 1px 8px 1px white;
-  white-space: nowrap;
+
 
 }
 
 main .pictures {
   border: 4px solid rgba(159, 255, 9, 1);
-  padding: 0%;
+  padding: 0px;
   box-shadow: 1px 1px 8px 1px rgba(159, 255, 9, 1);
   background-color: #000;
   width: 160px;
   height: 245px;
-  overflow-x: hidden;
   margin-bottom: 10px;
+  white-space: nowrap;
+  
 }
 
 h2 {
   color: white;
   font-size: 25px;
-  padding: 3px;
+  padding-top: 4px;
+  padding-bottom: 6px;
   margin: 0;
   margin-bottom: 3px;
   font-family: 'Patrick Hand', cursive;
-
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .ButtonModal {

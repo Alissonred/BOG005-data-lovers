@@ -33,6 +33,8 @@ else if (sortOrder === "Z-A") {
 }
 
 export const computeStatus = (character) => {
+  if (!Array.isArray(character.episode))
+   { throw new TypeError('No hay datos.');}
   let compute = (character.episode.length / 31) * 100;
   return Math.round(compute)
 }
