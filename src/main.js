@@ -4,6 +4,7 @@ import { filterData, sortData, computeStatus } from './data.js';
 import data from './data/rickandmorty/rickandmorty.js';
 
 const charactersSerie = document.getElementById("characters");
+
 function showData(data) {
   let showCharacters = "";
   charactersSerie.innerHTML = "";
@@ -42,7 +43,6 @@ buttonSort.addEventListener("change", () => showData(sortData(data.results, butt
 const buttonAll = document.getElementById("buttonAll");
 buttonAll.addEventListener("click", () => showData(data.results));
 
-/////////////////////////// calcular///////
 let score = 0;
 let countQuestions = 0;
 const buttonGame = document.getElementById("buttonGame");
@@ -67,12 +67,12 @@ function showGame(characters) {
   <option id="answer2" value="${opciones[1].name}">${opciones[1].name}</option>
   <option id="answer2" value="${opciones[2].name}">${opciones[2].name}</option> </select>
   <button id="ButtonNext">Next</button>
+  <section>
   <h5>Clue:</h5>
-  <button id="prueba">This character has percentage in the series.<button>
+  <p>This character has a ${computeStatus(answer1)}% of appearance in the series.<p>
+  </section>
   </article>
   `;
-  console.log(answer1)
-  charactersSerie.querySelector("#prueba").addEventListener("click", () => computeStatus(answer1))
 
   charactersSerie.querySelector("#ButtonNext").addEventListener("click", () => showGame(data.results))
 

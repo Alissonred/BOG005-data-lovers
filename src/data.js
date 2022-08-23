@@ -32,14 +32,9 @@ else if (sortOrder === "Z-A") {
     } 
 }
 
-//funcion calcular 
-
 export const computeStatus = (character) => {
-  const compute = (character.episode.length / 31) * 100
-  console.log (character.episode.length)
-  console.log(compute)
-
-  return compute
+  let compute = (character.episode.length / 31) * 100;
+  return Math.round(compute)
 }
 
 

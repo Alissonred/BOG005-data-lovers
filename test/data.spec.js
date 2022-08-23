@@ -1,15 +1,7 @@
 import { filterData } from '../src/data.js';
 import { sortData } from '../src/data.js';
+import { computeStatus } from '../src/data.js';
 
-
-// testear:
-// es una funcion
-//reciba array           // error en caso de que no
-//reciba 2 parametros   // error en caso de que no
-//test ejemplo(moc)         // error en caso de que no
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 let original_data = {
    info: {
     count: "informacion"
@@ -59,7 +51,6 @@ let original_data = {
  
 };
 
-//////////////////////////////////////////////FILTER///////////////////////////////////////////////////////////////////////////////
 describe('filterData', () => {
   it('to evaluate if filterData is a function', () => {  //// testea que sea una funcion
     expect(typeof filterData).toBe('function');
@@ -137,11 +128,11 @@ describe('filterData', () => {
 
 ///////////////////////////////////////////////SORT//////////////////////////////////////////////////////////////////////////////////
 describe('sortData', () => {
-  it('to evaluate if sortData is a function', () => {  //// testea que sea una funcion
+  it('to evaluate if sortData is a function', () => {  
     expect(typeof sortData).toBe('function');
   });
 
-  it('Returns sortData A-Z', () => {                     // testea filtrar alive
+  it('Returns sortData A-Z', () => {                     
     let dataExpectAZ = [
       {
         name: "Adjudicator Rick",
@@ -186,13 +177,9 @@ describe('sortData', () => {
     ];
     expect(sortData(original_data.results, "A-Z")).toEqual(dataExpectAZ);
      
-
-   /* it('filterData returns a TypeError', () => {                      // testea el error 
-    expect(() => filterData( )).toThrow(TypeError);
-  });  */
   });
 
-  it('Returns sortData Z-A', () => {                     // testea filtrar dead
+  it('Returns sortData Z-A', () => {                   
   let dataExpectZA = [
     {
       name: "Rick Sanchez",
@@ -235,8 +222,6 @@ describe('sortData', () => {
     },
   ];
   expect(sortData(original_data.results, "Z-A")).toEqual(dataExpectZA);
-   
-
 
   });
 
@@ -247,6 +232,108 @@ describe('sortData', () => {
    }); 
 });
 
+let original_dataCompute = {
+  info: {
+   count: "informacion"
+   }, 
+   results: [
+   {
+     name: "Rick Sanchez",
+     status: "Alive",
+     episode: [
+      "https://rickandmortyapi.com/api/episode/1",
+      "https://rickandmortyapi.com/api/episode/2",
+      "https://rickandmortyapi.com/api/episode/3",
+      "https://rickandmortyapi.com/api/episode/4",
+      "https://rickandmortyapi.com/api/episode/5",
+      "https://rickandmortyapi.com/api/episode/6",
+      "https://rickandmortyapi.com/api/episode/7",
+      "https://rickandmortyapi.com/api/episode/8",
+      "https://rickandmortyapi.com/api/episode/9",
+      "https://rickandmortyapi.com/api/episode/10",
+      "https://rickandmortyapi.com/api/episode/11",
+      "https://rickandmortyapi.com/api/episode/12",
+      "https://rickandmortyapi.com/api/episode/13",
+      "https://rickandmortyapi.com/api/episode/14",
+      "https://rickandmortyapi.com/api/episode/15",
+      "https://rickandmortyapi.com/api/episode/16",
+      "https://rickandmortyapi.com/api/episode/17",
+      "https://rickandmortyapi.com/api/episode/18",
+      "https://rickandmortyapi.com/api/episode/19",
+      "https://rickandmortyapi.com/api/episode/20",
+      "https://rickandmortyapi.com/api/episode/21",
+      "https://rickandmortyapi.com/api/episode/22",
+      "https://rickandmortyapi.com/api/episode/23",
+      "https://rickandmortyapi.com/api/episode/24",
+      "https://rickandmortyapi.com/api/episode/25",
+      "https://rickandmortyapi.com/api/episode/26",
+      "https://rickandmortyapi.com/api/episode/27",
+      "https://rickandmortyapi.com/api/episode/28",
+      "https://rickandmortyapi.com/api/episode/29",
+      "https://rickandmortyapi.com/api/episode/30",
+      "https://rickandmortyapi.com/api/episode/31"
+  ],
+   },
+
+   {
+     name: "Morty Smith",
+     status: "Alive",
+     episode: [
+      "https://rickandmortyapi.com/api/episode/1",
+      "https://rickandmortyapi.com/api/episode/2",
+      "https://rickandmortyapi.com/api/episode/3",
+      "https://rickandmortyapi.com/api/episode/4",
+      "https://rickandmortyapi.com/api/episode/5",
+      "https://rickandmortyapi.com/api/episode/6",
+      "https://rickandmortyapi.com/api/episode/7",
+      "https://rickandmortyapi.com/api/episode/8",
+      "https://rickandmortyapi.com/api/episode/9",
+      "https://rickandmortyapi.com/api/episode/10",
+      "https://rickandmortyapi.com/api/episode/11",
+      "https://rickandmortyapi.com/api/episode/12",
+      "https://rickandmortyapi.com/api/episode/13",
+      "https://rickandmortyapi.com/api/episode/14",
+      "https://rickandmortyapi.com/api/episode/15",
+      "https://rickandmortyapi.com/api/episode/16",
+      "https://rickandmortyapi.com/api/episode/17",
+      "https://rickandmortyapi.com/api/episode/18",
+      "https://rickandmortyapi.com/api/episode/19",
+      "https://rickandmortyapi.com/api/episode/20",
+      "https://rickandmortyapi.com/api/episode/21",
+      "https://rickandmortyapi.com/api/episode/22",
+      "https://rickandmortyapi.com/api/episode/23",
+      "https://rickandmortyapi.com/api/episode/24",
+      "https://rickandmortyapi.com/api/episode/25",
+      "https://rickandmortyapi.com/api/episode/26",
+      "https://rickandmortyapi.com/api/episode/27",
+      "https://rickandmortyapi.com/api/episode/28",
+      "https://rickandmortyapi.com/api/episode/29",
+      "https://rickandmortyapi.com/api/episode/30",
+      "https://rickandmortyapi.com/api/episode/31"
+  ],
+   
+   },
+   {
+     name: "Adjudicator Rick",
+     status: "Dead",
+     episode: [
+      "https://rickandmortyapi.com/api/episode/28"
+    ],
+   },
+ ]
+
+};
+
+describe('computeStatus', () => {
+  it('to evaluate if computeStatus is a function', () => {  
+    expect(typeof computeStatus).toBe('function');
+  });
+
+  it('Returns percentage of characters', () => { 
+let computexpected = (original_dataCompute.episode / 31) * 100
+    expect(computeStatus(original_dataCompute.results)).toBe(computexpected);
+  });
+});
 
 
 
