@@ -7,15 +7,15 @@ export const filterData = (data, condition) => {
 };
 
 export const sortData = (data, sortOrder) => {
+  if (!data  || !sortOrder )
+   { throw new TypeError('No hay datos.');}
+   
 if (sortOrder === "A-Z") { 
   const sortedDataDownward = data.sort((a,b) => {
 if (a.name < b.name) {
   return -1;
-}
- else if (a.name > b.name ) {
-  return 1;
 } else
-return 0;
+return 1;
   })
   return sortedDataDownward;
 } 
@@ -25,14 +25,18 @@ else if (sortOrder === "Z-A") {
     
     if (a.name > b.name) {
       return -1;
-    }
-     else if (a.name < b.name ) {
-      return 1;
     } else
-    return 0;
+    return 1;
       })
       return sortedDataUpward;
     } 
+}
+
+export const computeStatus = (character) => {
+  if (!Array.isArray(character.episode))
+   { throw new TypeError('No hay datos.');}
+  let compute = (character.episode.length / 31) * 100;
+  return Math.round(compute)
 }
 
 
