@@ -8,6 +8,7 @@ const gameSerie = document.getElementById("game");
 
 function showData(data) {
   let showCharacters = "";
+  
   charactersSerie.innerHTML = "";
   for (let characters of data) {
     showCharacters += `<article class="pictures"> 
@@ -30,8 +31,9 @@ function showData(data) {
      </section>
       `;
   }
-  
+
   charactersSerie.innerHTML = showCharacters;
+
 }
 
 showData(data.results)
@@ -61,10 +63,7 @@ function showGame(characters) {
   let opciones = [answer1, answer2, answer3];
   opciones.sort(() => Math.random() - 0.5)
 
-
-
   charactersSerie.innerHTML = "";
-  gameSerie.innerHTML = "";
   gameSerie.innerHTML = `
   <article id=Gamecontainer> <h4>Which character does the image refer to?</h4>
   <br>
