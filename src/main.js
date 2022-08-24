@@ -3,12 +3,11 @@ import { filterData, sortData, computeStatus } from './data.js';
 //import data from './data/pokemon/pokemon.js';
 import data from './data/rickandmorty/rickandmorty.js';
 
-const charactersSerie = document.getElementById("characters");
-const gameSerie = document.getElementById("game");
+const charactersSerie = document.getElementById("characters"); // section
+
 
 function showData(data) {
   let showCharacters = "";
-  
   charactersSerie.innerHTML = "";
   for (let characters of data) {
     showCharacters += `<article class="pictures"> 
@@ -42,12 +41,12 @@ const buttonFilter = document.getElementById("filterButton");
 buttonFilter.addEventListener("change", () => showData(filterData(data.results, buttonFilter.value)));
 
 const buttonSort = document.getElementById("sortButton");
-buttonSort.addEventListener("change", () => showData(sortData(data.results, buttonSort.value)));
+buttonSort.addEventListener("change", () => showData(sortData(filterData(data.results, buttonFilter.value), buttonSort.value)));
 
 const buttonAll = document.getElementById("buttonAll");
 buttonAll.addEventListener("click", () => showData(data.results));
 
-const gamecontainer = document.getElementById ("GameContainer")
+console.log(data.results)
 
 let score = 0;
 let countQuestions = 0;
@@ -63,9 +62,12 @@ function showGame(characters) {
   let opciones = [answer1, answer2, answer3];
   opciones.sort(() => Math.random() - 0.5)
 
+  const gamecontainer = document.getElementById ("gamecontainer") //section 2
+
   charactersSerie.innerHTML = "";
-  gameSerie.innerHTML = `
-  <article id=Gamecontainer> <h4>Which character does the image refer to?</h4>
+  gamecontainer.innerHTML = "";
+  gamecontainer.innerHTML = `
+  <article> <h4>Which character does the image refer to?</h4>
   <br>
   <img src=${answer1.image} alt="Imagen">
   <select name="select an answer" id="opc_img">
@@ -81,20 +83,20 @@ function showGame(characters) {
   </article>
   `;
 
-  gameSerie.querySelector("#ButtonNext").addEventListener("click", () => showGame(data.results))
+  gamecontainer.querySelector("#ButtonNext").addEventListener("click", () => showGame(data.results))
 
-  gameSerie.querySelector("#opc_img").addEventListener("change", (event) => {
+  gamecontainer.querySelector("#opc_img").addEventListener("change", (event) => {
     if (event.target.value === answer1.name) { score++; }
   })
   
 
   let category = "";
   if (countQuestions === 11) {
-    gameSerie.innerHTML = "";
+    gamecontainer.innerHTML = "";
     if (score <= 3) {category += "Not a fan!"}
     else if (score >= 4 && score <= 6) {category +="You are almost a fan!"}
     else if (score >= 7 && score <= 10) {category +="You are a big fan!"}
-    gameSerie.innerHTML =  `
+    gamecontainer.innerHTML =  `
     <article id= "results"> you  finished, your score is: ${score}, your category is ${category}
     </article>
     `;
