@@ -65,9 +65,8 @@ function showGame(characters) {
   const gamecontainer = document.getElementById ("gamecontainer") //section 2
 
   charactersSerie.innerHTML = "";
-  gamecontainer.innerHTML = "";
-  gamecontainer.innerHTML = `
-  <article> <h4>Which character does the image refer to?</h4>
+  gameSerie.innerHTML = `
+  <article id=Gamecontainer> <h4>Which character does the image refer to?</h4>
   <br>
   <img src=${answer1.image} alt="Imagen">
   <select name="select an answer" id="opc_img">
@@ -88,6 +87,7 @@ function showGame(characters) {
   gamecontainer.querySelector("#opc_img").addEventListener("change", (event) => {
     if (event.target.value === answer1.name) { score++; }
   })
+
   
 
   let category = "";

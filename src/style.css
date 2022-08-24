@@ -21,6 +21,7 @@ header {
 
 }
 
+
 #characters {
   display: grid;
   gap: 115px;
@@ -69,16 +70,17 @@ article img {
   height: 160px;
   box-shadow: 1px 1px 8px 1px white;
 
-
 }
 
 #characters .pictures {
+
   border: 4px solid rgba(159, 255, 9, 1);
   padding: 0px;
   box-shadow: 1px 1px 8px 1px rgba(159, 255, 9, 1);
   background-color: #000;
   width: 160px;
   height: 245px;
+  overflow-x: hidden;
   margin-bottom: 10px;
   white-space: nowrap;
   
@@ -96,6 +98,18 @@ h2 {
   text-overflow: ellipsis;
   overflow: hidden;
 }
+
+
+h2 {
+  color: white;
+  font-size: 25px;
+  padding: 3px;
+  margin: 0;
+  margin-bottom: 3px;
+  font-family: 'Patrick Hand', cursive;
+
+}
+
 
 .ButtonModal {
   background-color: rgb(110, 42, 165);
@@ -157,6 +171,7 @@ p {
   padding: 0;
   font-family: 'Secular One', sans-serif;
   color: white;
+
 }
 
 h3 {
@@ -214,6 +229,7 @@ nav {
 .buttons {
   width: 100%;
   height: 100%;
+
   background:
   rgba(159, 255, 9, 1);
 color: rgb(255, 0, 242);
@@ -221,6 +237,7 @@ color: rgb(255, 0, 242);
   text-align: center;
   font-size: 15px;
   font-family: 'Secular One', sans-serif;
+
   padding: 3px;
   flex-basis: 250px;
   flex-grow: 1;
@@ -230,9 +247,11 @@ color: rgb(255, 0, 242);
 }
 
 .buttons:hover {
+
   background-color: black;
   border-color: white;
   color: white;
+
 }
 
 footer {
@@ -244,12 +263,16 @@ footer {
   align-items: center;
   color: aliceblue;
   box-shadow: 1px 1px 3px 0px white;
+
   margin-top: 40px;
+
 
 }
 
 footer p {
+
   padding-top: 10px;
+
   font-size: 30px;
   font-family: 'Patrick Hand', cursive;
 }
@@ -282,6 +305,7 @@ h4 {
   font-family: 'Secular One', sans-serif;
   color: white;
   padding: 3px;
+
 }
 
 #results {
@@ -291,4 +315,5 @@ color: white;
 h5 {
   color: white;
   font-size: 30px;
+
 }
