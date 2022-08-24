@@ -47,7 +47,9 @@ buttonSort.addEventListener("change", () => showData(sortData(data.results, butt
 const buttonAll = document.getElementById("buttonAll");
 buttonAll.addEventListener("click", () => showData(data.results));
 
+
 const gamecontainer = document.getElementById ("GameContainer")
+
 
 let score = 0;
 let countQuestions = 0;
@@ -66,6 +68,7 @@ function showGame(characters) {
   charactersSerie.innerHTML = "";
   gameSerie.innerHTML = `
   <article id=Gamecontainer> <h4>Which character does the image refer to?</h4>
+
   <br>
   <img src=${answer1.image} alt="Imagen">
   <select name="select an answer" id="opc_img">
@@ -86,6 +89,7 @@ function showGame(characters) {
   gameSerie.querySelector("#opc_img").addEventListener("change", (event) => {
     if (event.target.value === answer1.name) { score++; }
   })
+
   
 
   let category = "";
