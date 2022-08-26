@@ -72,15 +72,15 @@ function showGame(characters) {
   const gamecontainer = document.getElementById("gamecontainer") //section 2
 
   charactersSerie.innerHTML = "";
-  gamecontainer.innerHTML = `<h4>Which character does the image refer to?</h4>
+  gamecontainer.innerHTML = `<h4 id="TitleGame">Which character does the image refer to?</h4>
   <article id=secondcontainergame> 
-  <img src=${answer1.image} alt="Imagen">
-  <select name="select an answer" id="opc_img">
+  <img id="imageGame" src=${answer1.image} alt="Imagen">
+  <select  name="select an answer" id="opc_img">
   <option disabled selected ="Select an answer"></option>
   <option id="answer1" value="${opciones[0].name}">${opciones[0].name}</option>
   <option id="answer2" value="${opciones[1].name}">${opciones[1].name}</option>
   <option id="answer2" value="${opciones[2].name}">${opciones[2].name}</option> </select>
-  <button id="ButtonNext">Next</button>
+  <button  id="ButtonNext">Next</button>
   </article>
   <section id="clue">
   <h5>Clue:</h5>

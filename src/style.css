@@ -10,50 +10,42 @@ body {
 }
 
 header {
-  width: 100%;
-  height: 25%;
   background-color: black;
   box-shadow: 1px 1px 10px 0px white;
-  margin-bottom: 10px;
-  max-height: 800px;
+margin-bottom: 5px;
+  max-height: 400px;
   max-width: 1400px;
-
+  min-width: 80px;
+  min-height: 40px;
+  display: flex;
+align-items: center;
+justify-content: center;
 }
 
 
+.title {
+  max-height: 150px;
+  max-width: 350px;
+  min-width: 40px;
+  min-height: 20px;
+}
+
 #characters {
   display: grid;
-  gap: 115px;
+  gap: 80px 115px;
   grid-auto-rows: 220px;
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   background-image: url(./Fondo\ estrellas\ desde\ cero\ finalU.jpg);
   background-repeat: repeat;
   justify-content: center;
   text-align: center;
-  margin: 0 auto;
+  margin: 0;
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 30px;
   padding-bottom: 30px; 
 }
 
-h1 {
-  margin: 0;
-  padding: 0;
-}
-
-
-.imageRickAndMorty {
-  width: 10%;
-  height: 25%;
-  margin-left: 33%;
-
-}
-
-.title {
-  width: 25%;
-  height: 40%;
-}
 
 #imagemodal {
   width: 150px;
@@ -83,6 +75,7 @@ article img {
   overflow-x: hidden;
   margin-bottom: 10px;
   white-space: nowrap;
+  margin: auto;
   
 }
 
@@ -153,9 +146,10 @@ h2 {
 }
 
 .modalDialog>section {
-  max-width: 800px;
-  width: 38%;
-  height: 53%;
+  max-height: 400px;
+  max-width: 400px;
+  min-width: 40px;
+  min-height: 20px;
   position: relative;
   margin: 10% auto;
   padding: 5px;
@@ -164,6 +158,7 @@ h2 {
   text-align: center;
   color: white;
   box-shadow: 1px 1px 15px 0px rgba(159, 255, 9, 1);
+  
 }
 
 p {
@@ -171,7 +166,7 @@ p {
   padding: 0;
   font-family: 'Secular One', sans-serif;
   color: white;
-
+  overflow: hidden;
 }
 
 h3 {
@@ -293,13 +288,14 @@ footer p {
 
 }
 
-h4 {
-  font-size: 40px;
-  padding: 10px;
-  margin: 20px;
+#TitleGame {
+  font-size: 30px;
+  padding: 5px;
+  margin: 0px;
   font-family: 'Patrick Hand', cursive;
   color: white;
   text-align: center;
+  width: 100%;
 }
 
 #opc_img {
@@ -345,27 +341,33 @@ padding: 0;
 margin: 0;
 }
 #gamecontainer {
-  margin: auto;
   padding: 0;
   width: 90%;
   border: 2px aliceblue;
   height: 100%;
   margin-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  background-color: #000;
+  box-shadow: 1px 1px 8px 0px rgba(159, 255, 9, 1);
+border: 4px solid rgba(159, 255, 9, 1);
+border-radius: 15px;
 }
 
 #clue {
-  display: inline-block;
-  width: 25%;
   text-align: center;
   height: 100%;
-  margin: auto;
+ margin: 10px;
+  width: 25%;
+  border: solid 3px white;
+ 
 }
 
 #secondcontainergame {
-  display: inline-block;
-  width: 70%;
-  margin: auto;
-  align-items: center;
-justify-content: center;
-
+text-align: center;
+margin: 10px;
 }
+
