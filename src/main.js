@@ -18,6 +18,7 @@ function showData(data) {
       <section id="${characters.id}" class="modalDialog">
       <section>
         <a href="#close" title="Close" class="close">X</a>
+        <section id="parrafosmodal">
         <h3>${characters.name}</h3>
         <img src=${characters.image} alt="Image" id="imagemodal">
         <p class="labels_m">Estatus: ${characters.status}</p>
@@ -26,6 +27,7 @@ function showData(data) {
         <p class="labels_m">Origen: ${characters.origin.name}</p>
         <p class="labels_m">Locación: ${characters.location.name}</p>
         <p class="labels_m">Número de episodios: ${characters.episode.length}</p>
+        </section>
       </section>
      </section>
       `;
@@ -73,8 +75,12 @@ function showGame(characters) {
 
   charactersSerie.innerHTML = "";
   gamecontainer.innerHTML = `<h4 id="TitleGame">Which character does the image refer to?</h4>
-  <article id=secondcontainergame> 
+  <article id=secondcontainergame> <figure class="figure">
   <img id="imageGame" src=${answer1.image} alt="Imagen">
+  <section id="clue">
+<h5>This character has a ${computeStatus(answer1)}% of appearance in the series.</h5>
+  </section>
+  </figure>
   <select  name="select an answer" id="opc_img">
   <option disabled selected ="Select an answer"></option>
   <option id="answer1" value="${opciones[0].name}">${opciones[0].name}</option>
@@ -82,10 +88,7 @@ function showGame(characters) {
   <option id="answer2" value="${opciones[2].name}">${opciones[2].name}</option> </select>
   <button  id="ButtonNext">Next</button>
   </article>
-  <section id="clue">
-  <h5>Clue:</h5>
-  <p>This character has a ${computeStatus(answer1)}% of appearance in the series.<p>
-  </section>
+  
   
   `;
 
@@ -104,9 +107,9 @@ function showGame(characters) {
     else if (score >= 4 && score <= 6) { category += "You are almost a fan!" }
     else if (score >= 7 && score <= 10) { category += "You are a big fan!" }
     gamecontainer.innerHTML = `
-    <article id= "results"> You  finished. <br>
+    <article id= "results"> <h6> You  finished. <br>
     Your score is: ${score} <br>
-    Your category is: ${category}
+    Your category is: ${category} </h6>
     </article>
     `;
   }
