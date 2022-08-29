@@ -1,12 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script src="main.js" type="module"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<header>
+  <img class="title" src="./Rick-and-Morty (2).jpg">
+</header>
+<nav>
+  <button id="buttonAll" class="buttons" value="ViewAll">View All</button>
+  <select name="filterButton" id="filterButton" class="buttons">
+    <option disabled selected="">Filter</option>
+    <option id="estado1" value="Alive">Alive</option>
+    <option id="estado2" value="Dead">Dead</option>
+    <option id="estado3" value="unknown">Unknown</option>
+  </select>
+
+  <select name="sortButton" id="sortButton" class="buttons">
+    <option disabled selected="">Sort By</option>
+    <option id="ordenar1" value="A-Z">A-Z</option>
+    <option id="ordenar2" value="Z-A">Z-A</option>
+  </select>
+  <button id="buttonGame" class="buttons">Game: How big a fan are you?</button>
+</nav>
+  <main>
+    <section id="characters">
+    </section>
+    <section id="gamecontainer"></section>
+  </main>
+  <footer>
+    <p>Rick and Morty © 2022</p>
+  </footer>
+  <script src="main.js" type="module"></script>
+</body>
+
+
 </html>
