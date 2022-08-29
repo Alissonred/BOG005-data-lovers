@@ -60,7 +60,7 @@ Nuestro prototipo de baja fidelidad lo diseñamos principalmente para dispositiv
 
 ### 4. Diseño de la Interfaz de Usuario 
 
-Realizamos dos opciones muy similares para nuestro prototipo de alta fidelidad para en dispositivos móviles, sin embargo, a medida que avanzamos en el proyecto, realizamos cambios y ajustes al diseño inicial.
+Realizamos dos opciones muy similares para nuestro prototipo de alta fidelidad para dispositivos móviles, sin embargo, a medida que avanzamos en el proyecto, realizamos cambios y ajustes al diseño inicial.
 
   [Prototipo alta fidelidad](https://www.figma.com/file/i1JpFTeJd32TGrU6zcfzWm/Prototipo-dispositivo-movil-Data-Lovers)
 

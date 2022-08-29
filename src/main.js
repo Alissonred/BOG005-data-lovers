@@ -1,6 +1,4 @@
 import { filterData, sortData, computeStatus } from './data.js';
-// import data from './data/lol/lol.js';
-//import data from './data/pokemon/pokemon.js';
 import data from './data/rickandmorty/rickandmorty.js';
 
 const charactersSerie = document.getElementById("characters"); // section
@@ -45,16 +43,16 @@ buttonFilter.addEventListener("change", () => showData(filterData(data.results, 
 const buttonSort = document.getElementById("sortButton");
 buttonSort.addEventListener("change", () => ShowAll(data.results, filterData(data.results, buttonFilter.value)));
 
-function ShowAll (data, datafiltered) {
-  let sortAll="";
-    if (buttonFilter.value === "Filter") {
-      sortAll+= showData(sortData(data, buttonSort.value));  
-    } else {
-      sortAll+= showData(sortData(datafiltered, buttonSort.value));
-    }
-  return sortAll
+function ShowAll(data, datafiltered) {
+  let sortAll = "";
+  if (buttonFilter.value === "Filter") {
+    sortAll += showData(sortData(data, buttonSort.value));
+  } else {
+    sortAll += showData(sortData(datafiltered, buttonSort.value));
   }
-    
+  return sortAll
+}
+
 const buttonAll = document.getElementById("buttonAll");
 buttonAll.addEventListener("click", () => showData(data.results));
 
@@ -89,7 +87,6 @@ function showGame(characters) {
   <button  id="ButtonNext">Next</button>
   </article>
   
-  
   `;
 
   gamecontainer.querySelector("#ButtonNext").addEventListener("click", () => showGame(data.results))
@@ -97,8 +94,6 @@ function showGame(characters) {
   gamecontainer.querySelector("#opc_img").addEventListener("change", (event) => {
     if (event.target.value === answer1.name) { score++; }
   })
-
-
 
   let category = "";
   if (countQuestions === 11) {
