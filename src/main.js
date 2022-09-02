@@ -2,7 +2,7 @@ import { filterData, sortData, computeStatus } from './data.js';
 import data from './data/rickandmorty/rickandmorty.js';
 
 const charactersSerie = document.getElementById("characters"); // section
-
+const gamecontainer = document.getElementById("gamecontainer") //section 2
 function showData(data) {
   gamecontainer.innerHTML = "";
   let showCharacters = "";
@@ -69,7 +69,7 @@ function showGame(characters) {
   let opciones = [answer1, answer2, answer3];
   opciones.sort(() => Math.random() - 0.5)
 
-  const gamecontainer = document.getElementById("gamecontainer") //section 2
+  
 
   charactersSerie.innerHTML = "";
   gamecontainer.innerHTML = `<h4 id="TitleGame">Which character does the image refer to?</h4>
